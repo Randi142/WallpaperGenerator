@@ -1,7 +1,7 @@
 # WallpaperGenerator
-merge 1 image (or 9 images) to 3*3 images  as a wallpaper\n
-auto resize raw image to fit the output wallpaper
-custom resolution for output wallaper
+merge 1 image (or 9 images) to 3*3 images as a wallpaper<br>
+*auto resize raw image to fit the output wallpaper</br><br>
+*custom resolution for output wallaper</br>
 
 ***Please install Java before use this program***
 
