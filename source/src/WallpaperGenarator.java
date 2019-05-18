@@ -12,7 +12,9 @@ public class WallpaperGenarator {
 		
 		boolean type = true; //distinguish 1 input or 9 inputs
 		
-		double height , width ;
+		boolean resolution = true; //custom output resolution or scale in ratio 
+		
+		double height = 0, width = 0;
 		
 		String [] input = new String[10]; // 9 inputs
 		
@@ -22,6 +24,12 @@ public class WallpaperGenarator {
 		
 		type = s.nextBoolean();
 		
+		System.out.println("output image resolution? or scale in ratio");
+		
+		resolution = s.nextBoolean();
+		
+		if ( resolution == true ) {
+		
 		System.out.println("width? (resolution)");
 		
 		width = s.nextInt();
@@ -29,6 +37,10 @@ public class WallpaperGenarator {
 		System.out.println("height? (resolution)");
 		
 		height = s.nextInt();
+		
+		}
+		
+		
 		
 		if (type == true) {		//1 input to 3*3 image
 			
@@ -51,19 +63,27 @@ public class WallpaperGenarator {
 			
 		}
 		
-		BufferedImage joined = new BufferedImage((int)width,(int)height, BufferedImage.TYPE_INT_RGB); 	// output image & size
-		
 		BufferedImage image[] = new BufferedImage[10];
 		
 		for (int x = 1; x<10 ; x++) 			
 			image[x] = ImageIO.read(new File(input[x])); 
+		
+		if ( resolution == false ) {
+			
+			width = (image[1].getWidth()*3);
+			
+			height = (image[1].getHeight()*3);
+			
+		}
+		
+		BufferedImage joined = new BufferedImage((int)width,(int)height, BufferedImage.TYPE_INT_RGB); 	// output image & size
 
 		BufferedImage resizedImage [] = new BufferedImage[10];
-		
+
 		width = (width / 3);				
 		
 		height = (height / 3);
-		
+
 		if ((width - (int)width) != 1)		//avoid black edge while the resolution / 3 has a remainder
 			width++;
 		if ((height - (int)height) != 1)
