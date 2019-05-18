@@ -18,15 +18,19 @@ public class WallpaperGenarator {
 		
 		String [] input = new String[10]; // 9 inputs
 		
-		Scanner s = new Scanner (System.in);
-		
-		System.out.println("1 image input enter true, 9 images input enter false");
+		Scanner s = new Scanner (System.in);	
+
+		System.out.println("For 1 image input insert \"true\", 9 images input insert \"false\"");
 		
 		type = s.nextBoolean();
 		
-		System.out.println("output image resolution? or scale in ratio");
-		
-		resolution = s.nextBoolean();
+		if (type ==true) {
+			
+			System.out.println("For custom resolution insert \"true\", scale in ratio insert \"false\"");
+			
+			resolution = s.nextBoolean();
+			
+			}
 		
 		if ( resolution == true ) {
 		
@@ -54,7 +58,7 @@ public class WallpaperGenarator {
 		
 		else					//9 inputs to 3*3 image
 		{
-			System.out.println("Please input the image path");
+			System.out.println("Please input the image path * 9");
 			
 			for (int y=1 ; y<10 ;y++)
 			{
