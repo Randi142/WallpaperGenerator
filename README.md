@@ -1,5 +1,5 @@
 # WallpaperGenerator
-merge 1 image (or 9 images) to 3*3 images  as a wallpaper;
+merge 1 image (or 9 images) to 3*3 images  as a wallpaper\n
 auto resize raw image to fit the output wallpaper
 custom resolution for output wallaper
 
